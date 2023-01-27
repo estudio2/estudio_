@@ -1,0 +1,139 @@
+<form action="/editar_carpeta/<%=carpeta.Id%>" method="Post" class="editar_carpeta">
+
+    <div class="seccion_carpeta">
+
+        <label>Carpeta Num:</label> 
+        <input type="text" value="<%=carpeta.Num%>" name="Num">
+        
+    </div>
+
+    <div class="seccion_carpeta">
+
+        <label>Etiqueta:</label> 
+        <input type="text" value="<%=carpeta.Etiqueta%>" name="Etiqueta">
+        
+    </div>
+
+    <div class="seccion_carpeta">
+
+        <label>Area:</label> 
+        <input type="text" value="<%=carpeta.Area%>" name="Area">
+        
+    </div>
+
+    <div class="seccion_carpeta">
+
+        <label>Sector:</label> 
+        <input type="text" value="<%=carpeta.Sector%>" name="Sector">
+        
+    </div>
+
+    <div class="seccion_carpeta">
+
+        <label>HBL/HAWB:</label> 
+        <input type="text" value="<%=carpeta.HBL_HAWB%>" name="HBL_HAWB">
+        
+    </div>
+
+    <div class="seccion_carpeta">
+
+        <label>Cliente:</label> 
+        <select name="Cliente">
+
+            <option value="<%=carpeta.IdCliente%>=<%=carpeta.NombreCliente%>"><%=carpeta.NombreCliente%></option>
+
+            <% clientes.forEach(function(c){ %>
+                <option value="<%=c.Id%>=<%=c.Nombre%>"><%=c.Nombre%></option>
+            <% }) %>
+        </select>
+        
+    </div>
+
+    <div class="seccion_carpeta">
+
+        <label>Entidad Exterior:</label> 
+        <input type="text" value="<%=carpeta.EntidadExterior%>" name="EntidadExterior">
+        
+    </div>
+
+    <div class="seccion_carpeta">
+
+        <label>Transportista:</label> 
+        <input type="text" value="<%=carpeta.Transportista%>" name="Transportista">
+        
+    </div>
+
+    <div class="seccion_carpeta">
+
+        <label>Origen:</label> 
+        <input type="text" value="<%=carpeta.Origen%>" name="Origen">
+        
+    </div>
+
+    <div class="seccion_carpeta">
+
+        <label>Destino:</label> 
+        <input type="text" value="<%=carpeta.Destino%>" name="Destino">
+        
+    </div>
+
+    <div class="seccion_carpeta">
+
+        <label>Fecha Salida:</label> 
+        <input type="text" value="<%=carpeta.FechaSalida%>" name="FechaSalida">
+        
+    </div>
+
+    <div class="seccion_carpeta">
+
+        <label>Fecha Llegada:</label> 
+        <input type="text" value="<%=carpeta.FechaLlegada%>" name="FechaLlegada">
+        
+    </div>
+
+    <div class="boton_editar">
+        <button type="submit" class="boton_carpeta">Editar</button>
+    </div>
+
+</form>
+
+
+
+<article class="estados">
+
+    <h3 class="titulo_estados">Estados</h3>
+
+    <form action="/crear_estado/<%=carpeta.Id%>/<%=carpeta.Num%>/<%=carpeta.MailCliente%>/<%=carpeta.Etiqueta%>" class="formulario_estado" method="POST">
+        <input type="text" name="Titulo">
+        <textarea name="Descripcion" cols="30" rows="10"></textarea>
+        <button type="submit" class="boton_estado">Agregar estado</button>
+    </form>
+
+    <% let i = 0%>
+
+    <% estados.forEach(function(e){ %>
+
+        <section>
+
+            <img src="/img/iconos/flecha1.svg" alt="">
+
+            <% if(i == 0){ %>
+
+                <h3 class="primer_titulo"><%=e.Titulo%></h3>
+                <p class="primer_descripcion"><%=e.Descripcion%></p>
+
+            <%} else {  %>
+
+                <h3 class="titulo"><%=e.Titulo%></h3>
+                <p class="descripcion"><%=e.Descripcion%></p>
+
+            <% } %>
+
+            <% i = i + 1%>
+
+        </section>
+
+    <% }) %>
+
+</article>
+

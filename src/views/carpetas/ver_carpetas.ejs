@@ -1,0 +1,58 @@
+<article class="carpetas">
+
+
+    <form action="/ver_carpetas" method="POST" class="filtro">
+
+        <% if(filtro){ %>
+            <input type="text" placeholder="Buscar..." class="input_buscar" name="Filtro" value="<%=filtro%>">
+        <% } else { %>
+            <input type="text" placeholder="Buscar..." class="input_buscar" name="Filtro">
+        <%  } %>
+
+        <select class="select_soloMias" name="SoloMias">
+    
+            <% if(soloMias == 1){ %>   
+                <option value="1" selected="selected">Solo mias</option> 
+                <option value="0">Todas</option> 
+            <% }else{ %>
+                <option value="0" selected="selected">Todas</option>
+                <option value="1">SoloMias</option> 
+            <% } %>
+    
+    
+        </select>
+
+        <button type="submit" class="boton_buscar">Buscar</button>
+    </form>
+
+    <div class="carpetas_tabla">
+
+        <span class="titulo_tabla">Num</span>
+        <span class="titulo_tabla">Etiqueta</span>
+        <span class="titulo_tabla">Cliente</span>
+        <span class="titulo_tabla">Customer</span>
+
+        <% var i = 0 %>
+        <% carpetas.forEach(function(c){ %>
+
+            <span class="elemento_tabla num"><%= c.Num %></span>
+            <span class="elemento_tabla area"><%= c.Etiqueta%></span>
+            <span class="elemento_tabla cliente"><%= c.NombreCliente %></span>
+            <span class="elemento_tabla area"><%= c.NombreCustomer %></span>
+            <a class="elemento_tabla ver_mas boton_tabla" href="/ver_carpeta/<%=c.Id%>">Ver</a>
+            <button class="elemento_tabla boton_tabla" onclick="mostrarConfirmacionBorrado(<%= i %>)"><img src="/img/iconos/borrar.svg" alt=""></button>
+            <div class="confirmar_borrado">
+                <span>Seguro que desea eliminar la carpeta?</span>
+                <button class="confirmar_borrado_boton" onclick="ocultarConfirmacionBorrado(<%= i %>)"><img src="/img/iconos/x.svg" alt=""></button>
+                <a href="/eliminar_carpeta/<%=c.Id%>/<%=c.Num%>" class="confirmar_borrado_boton"><img src="/img/iconos/tilde.svg" alt=""></a>
+            </div>
+            <% i++ %>
+        <% }) %>
+
+    </div>
+
+    <a href="/crear_carpeta" class="nueva_carpeta">Crear Carpeta</a>
+
+</article>
+
+<script src="/js/confirmar_borrado.js"></script>

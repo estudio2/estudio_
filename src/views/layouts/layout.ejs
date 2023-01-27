@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title><%= titulo %></title>
+    <meta name="description" content="Empresa de logistica nacional e internacional">
+    <meta name="keywords" content="jkn, cargo, transporte, logistica, internacional, nacional, fletes">
+    <meta name="sitedomain" content="www.jkncargo.jema.site">
+    <meta name="organization" content="JKN Cargo">
+    <meta name="robots" content="index,follow">
+    <meta name="revisit-after" content="15days">
+    <meta name="googlebot" content="index,follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/layout.css">
+    <link rel="stylesheet" href="/css/<%-archivo_css%>.css">
+</head>
+<body>
+
+    <header class="cabecera">
+
+        <button class="ham_button" id="ham_button">
+            <span class="linea linea_1"></span>
+            <span class="linea linea_2"></span>
+            <span class="linea linea_3"></span>
+        </button>
+
+        <a href="/" class="logo">JKN Cargo</a>
+        <div class="links">
+            <a href="/">Menú</a>
+            <a href="/sobre_nosotros">Sobre nosotros</a>
+            <a href="/preguntas_frecuentes">Preguntas frecuentes</a>
+            <a href="/cotizacion">Pedir cotización</a>
+            <a href="/contacto">Contacto</a>
+            <% if(!noMostrarVolver){ %>  
+
+                <a href="javascript:history.back()" class="volver"> < Volver </a>
+
+            <% } %>
+        </div>
+    </header>
+
+    <nav class="menu menu_estado_inicial" id="menu">
+        <div class="menu_parte_superior menu_items"> <!-- Esta parte del menu la pueden ver todos sin inportar 
+                                        si estan autentificados o el rol -->
+            <a class="enlace" href="/">Menú</a>
+            <a class="enlace" href="/sobre_nosotros">Sobre nosotros</a>
+            <a class="enlace" href="/preguntas_frecuentes">Preguntas frecuentes</a>
+            <a class="enlace" href="/cotizacion">Pedir cotización</a>
+            <a class="enlace" href="/contacto">  Contacto</a>
+
+        </div> 
+
+        <div class="menu_parte_inferior menu_items">
+
+            <% if(usuario == undefined){ %>  <!-- Si no hay un usuario autentificado le doy la opcion de logearse -->
+
+                <a class="enlace" href="/iniciar_sesion">  Iniciar sesion</a>
+
+            <% }else{ %>     <!-- Si esta autentificado va a mostrarle otras opciones segun su rol -->
+
+                <span class="nombre_usuario">  <%= usuario.Nombre %></span>
+
+                <% if(usuario.Rol == 1){ %>
+
+                    
+                    <a class="enlace" href="/mis_carpetas/<%=usuario.Id%>"> <img class="icono" src="/img/iconos/hoja.svg" alt=""> Ver mis cargas</a>
+                    <a class="enlace" href="/cerrar_sesion"> Cerrar sesion</a>
+
+                <% }else if(usuario.Rol == '2'){ %>
+                    
+                    <a class="enlace" href="/ver_carpetas/0">  Cargas</a>
+                    <a class="enlace" href="/ver_usuarios/1">  Clientes</a>
+                    <a class="enlace" href="/cerrar_sesion">  Cerrar sesion</a>
+
+                <% }else if(usuario.Rol == '3'){ %>  <!-- Administrador tiene algunas opciones mas que empleado -->
+                            
+                    <a class="enlace enlaceAdmin" href="/ver_carpetas/0"> Cargas</a>
+                    <a class="enlace enlaceAdmin" href="/ver_usuarios/1"> Clientes / Empleados</a>
+                    <a class="enlace enlaceAdmin" href="/registro_auditoria">  Registro de auditoria</a>
+                    <a class="enlace enlaceAdmin" href="/cerrar_sesion"> Cerrar sesion</a>
+
+                <% } %>
+
+                
+
+            <% } %>
+
+        </div>
+
+    </nav>
+    
+
+    <main class="contenido_estado_inicial" id="contenido">
+        <%- include('partials/mensaje.ejs') %>
+        <%- body %>
+
+    </main>
+    
+</body>
+<script src="/js/menu.js"></script>
+</html>

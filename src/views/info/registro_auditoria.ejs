@@ -1,0 +1,16 @@
+<article class="registro_auditoria">
+
+    <h3 class="titulo_registro">Registro auditoria</h3>
+
+    <% registros.forEach( function(r){ %>
+
+        <section class="registro_seccion">
+            <div>
+                <span><%=r.Dia%>/<%=r.Mes%>/<%=r.Anio%></span>
+                <span>Cuit/Cuil: <%=r.UsuarioNum%></span>
+            </div>
+            <p><%=r.Descripcion%></p>
+        </section>
+
+    <% }) %>
+</article>

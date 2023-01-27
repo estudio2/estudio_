@@ -1,0 +1,214 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Barlow', sans-serif;
+    font-weight: bold;
+    color: rgb(228, 228, 228);
+}
+
+:root {
+    --color1: rgb(250, 246, 246);
+    --color2: #46d8e28c;
+    --color3: #46d8e2;
+    --color4: rgba(91, 159, 236, 0);
+    --color5: #46d8e242;;
+    --color6: #01253c;
+    --color7: #46d8e2;
+}
+
+html{
+  font-size: 10px;
+  background-color: var(--color6);
+ 
+}
+
+
+
+/*
+
+    Mensajes
+
+*/
+
+.div_error{
+    width: 100%;
+    height: 30px;
+    background-color: rgb(210, 72, 72);
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.error{
+    color: rgb(255, 255, 255);
+    margin-left: 50px;
+}
+
+.div_exito{
+    width: 100%;
+    height: 30px;
+    background-color: rgb(87, 164, 27);
+    display: flex;
+    align-items: center;
+}
+
+.exito{
+    color: rgb(255, 255, 255);
+    margin-left: 50px;
+}
+
+
+/*
+
+    Header
+
+*/
+
+.cabecera{
+    width: 100%;
+    height: 50px;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    background-color: var(--color6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cabecera .logo{
+    text-decoration: none;
+    font-size: 2.4rem;
+    color: black;
+    color: var(--color1);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    margin-left: 100px;
+}
+
+.cabecera .links{
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  margin: 5px 45px 0 0;
+}
+
+.cabecera .links a{
+  text-decoration: none;
+  color: var(--color1);
+  font-size: 1.5rem;
+  margin-left: 25px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.cabecera .links a:hover{
+  color: var(--color3);
+}
+
+.ham_button{
+    width: 25px;
+    height: 30px;
+    margin-right: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    left: 20px;
+}
+
+.ham_button .linea{
+    width: 100%;
+    height: 2px;
+    background-color: var(--color1);
+    margin: 3px;
+}
+
+/*
+
+    Nav
+
+*/
+
+.menu{
+    width: 250px;
+    height: calc(100vh - 50px);
+    position: fixed;
+    top: 50px;
+    z-index: 50;
+    background-color: var(--color6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: 1s;
+}
+
+.menu_estado_inicial{
+    left: -300px;
+}
+
+.menu_desplazado{
+    left: 0px;
+}
+
+.menu .menu_items{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 50%;
+    color: var(--color1);
+} 
+
+.menu .menu_items .enlace{
+    text-decoration: none;
+    font-size: 2.2rem;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: 100%;
+    height: 25%;
+    color: var(--color1);
+    padding-left: 10%;
+}
+
+.menu .menu_items .enlaceAdmin{
+    height: 22%;
+}
+
+.menu .menu_items .enlace:hover{
+    background-color: var(--color7);
+}
+
+.menu .menu_items .enlace .icono{
+    width: 17px;
+    height: 17px;
+    margin-right: 10px;
+}
+
+.menu .menu_parte_superior{
+    border-bottom: 2px solid var(--color1);
+}
+
+
+.menu .menu_parte_inferior .nombre_usuario{
+    font-size: 1.4rem;
+    margin: 15px 0 10px 10%;
+}
+
+.menu .menu_parte_inferior .nombre_usuario .icono{
+    width: 14px;
+    height: 14px;
+    margin-right: 5px;
+}

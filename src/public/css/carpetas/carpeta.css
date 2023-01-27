@@ -1,0 +1,154 @@
+.contenido_estado_inicial{
+    /*background: linear-gradient(to right, white, var(--color5));*/
+}
+
+
+.editar_carpeta{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.seccion_carpeta label{
+    font-size: 1.3rem;
+}
+
+input{
+    margin: 20px 0 0 10px;
+    width: 200px;
+    height: 30px;
+    border: 1px solid #aaa;
+    box-shadow: 0 1px 0 1px rgba(0,0,0,.03);
+    border-radius: 5px;
+    padding-left: 10px;
+}
+
+.seccion_carpeta select{
+    margin: 20px 0 0 10px;
+    width: 200px;
+    height: 30px;
+    border: 1px solid #aaa;
+    box-shadow: 0 1px 0 1px rgba(0,0,0,.03);
+    border-radius: 5px;
+    padding-left: 10px;
+}
+
+.boton_editar{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.boton_carpeta{
+    width: 100px;
+    height: 30px;
+    margin-top: 50px;
+}
+
+.estados{
+    width: 100%;
+    margin: 80px 0 ;
+    flex-direction: column;
+    align-items: center;
+}
+.estados .titulo_estados{
+    width: 100%;
+    text-align: center;
+    font-size: 2.4rem;
+    margin: 40px 0;
+    border-top: 2px solid var(--color3);
+    padding-top: 25px;
+}
+
+.estados .formulario_estado{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.estados input{
+    width: 300px;
+    height: 30px;
+    margin: 0;
+}
+
+.estados textarea{
+    width: 250px;
+    height: 150px;
+    border: 1px solid #aaa;
+    box-shadow: 0 1px 0 1px rgba(0,0,0,.03);
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+.boton_estado{
+    width: 100px;
+    height: 50px;
+    margin: 20px 0;
+    border: 1px solid #aaa;
+    box-shadow: 0 1px 0 1px rgba(0,0,0,.03);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.estados img{
+    width: 40px;
+    height: 40px;
+    margin: 20px 0;
+    transform: rotate(180deg);
+}
+
+.estados section{
+    width: 100;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.estados section .primer_titulo{
+    font-size: 2.8rem;
+    background-color: var(--color3);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.estados section .primer_descripcion{
+    font-size: 1.6rem;
+    background-color: var(--color3);
+    margin: 10px 0;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.estados section .titulo{
+    font-size: 1.6rem;
+}
+
+.estados section .descripcion{
+    font-size: 1.4rem;
+    margin: 10px 0;
+}
+
+
+@media (max-width: 340px){
+
+    .seccion_carpeta input{
+        width: 50vw;
+    }
+
+    .seccion_carpeta select{
+        width: 50vw;
+    }
+
+    .estados input{
+        width: 90vw;
+    }
+    .estados textarea{
+        width: 90vw;
+    }
+}

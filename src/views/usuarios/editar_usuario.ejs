@@ -1,0 +1,74 @@
+<% if(error){ %>
+    <div class="div_error">
+        <span class="error"> <%= error %> </span>
+    </div>
+<% } %>
+
+
+<form action="/editar_usuario/<%=id%>" method="POST" class="formulario_registro">
+
+    <h3 class="titulo_nuevo_usuario">Editar Usuario</h3>
+    
+    <div class="seccion_formulario">
+
+        <label>Rol</label>
+        <% if(datos.Rol != ''){%>
+
+            <select name="Rol">
+                <option value="1" <% if(datos.Rol == 1){ %> selected <% } %>>Cliente</option>
+                <option value="2" <% if(datos.Rol == 2){ %> selected <% } %>>Empleado</option>
+                
+                <% if(usuario.Rol == 3){ %>
+        
+                    <option value="3" <% if(datos.Rol == 3){ %> selected <% } %>>Administrador</option>
+
+                <% } %>
+            </select>
+
+    <% }else { %>
+
+        <select name="Rol">
+            <option value="1">Cliente</option>
+            <option value="2">Empleado</option>
+            
+            <% if(usuario.Rol == 3){ %>
+        
+                <option value="3">Administrador</option>
+
+            <% } %>
+            
+        </select>
+    <% } %>
+
+    </div>
+
+    <div class="seccion_formulario">
+        <label>Cuit/Cuil</label>
+        <input type="number" name="Cuit_Cuil" value="<%= datos.Cuit_Cuil %>"> 
+    </div>
+        
+    <div class="seccion_formulario">
+        <label>Nombre</label>
+        <input type="text" name="Nombre" value="<%= datos.Nombre %>"> 
+    </div>
+
+    <div class="seccion_formulario">
+        <label>Mail</label>
+        <input type="email" name="Mail" value="<%= datos.Mail %>"> 
+    </div>
+
+    <div class="seccion_formulario">
+        <label>Resetear Clave?</label>
+        
+        <select name="Contrasenia">
+            <option value="no" selected>No</option>
+            <option value="si">Si</option>
+        </select>
+
+    </div>
+
+    <div class="botones_registrar">
+        <a href="/ver_usuarios/1" class="boton_registrar">Cancelar</a>
+        <button type="submit" class="boton_registrar">Editar</button>
+    </div>
+</form>

@@ -1,0 +1,56 @@
+<article class="usuarios">
+
+    <select class="select_rol" onchange="location = this.value;">
+    
+        <% if(rol == 1){ %>   
+            <option value="/ver_usuarios/1" selected="selected">Clientes</option>
+            <option value="/ver_usuarios/2">Empleados</option> 
+        <% }else{ %>
+            <option value="/ver_usuarios/1">Clientes</option>
+            <option value="/ver_usuarios/2" selected="selected">Empleados</option> 
+        <% } %>
+
+        <% if(usuario.Rol == 3){ %>
+
+            <% if(rol == 3){ %>   
+                <option value="/ver_usuarios/3" selected="selected">Administradores</option>
+            <% }else{ %>
+                <option value="/ver_usuarios/3">Administradores</option>
+            <% } %>
+
+        <% } %>
+
+    </select>
+
+    <form action="/ver_usuarios/<%=rol%>" method="POST" class="buscar">
+        <input type="text" placeholder="Buscar..." class="input_buscar" name="Filtro">
+        <button type="submit" class="boton_buscar">Buscar</button>
+    </form>
+
+    <div class="usuarios_tabla">
+
+        <span class="titulo_tabla">Nombre</span>
+        <span class="titulo_tabla">Cuit/Cuil</span>
+
+        <% var i = 0 %>
+        <% usuarios.forEach(function(u){ %>
+
+            <span class="elemento_tabla nombre"><%= u.Nombre %></span>
+            <span class="elemento_tabla cuit_cuil"><%= u.Cuit_Cuil %></span>
+            <a href="/editar_usuario/<%=u.Id%>" class="elemento_tabla boton_tabla"><img src="/img/iconos/editar.svg" alt=""></a>
+            <button class="elemento_tabla boton_tabla" onclick="mostrarConfirmacionBorrado(<%= i %>)"><img src="/img/iconos/borrar.svg" alt=""></button>
+            <div class="confirmar_borrado">
+                <span>Seguro que desea eliminar el usuario?</span>
+                <button class="confirmar_borrado_boton" onclick="ocultarConfirmacionBorrado(<%= i %>)"><img src="/img/iconos/x.svg" alt=""></button>
+                <a href="/eliminar_usuario/<%=u.Id%>/<%=u.Cuit_Cuil%>" class="confirmar_borrado_boton"><img src="/img/iconos/tilde.svg" alt=""></a>
+            </div>
+            <% i++ %>
+        <% }) %>
+
+    </div>
+
+    <a href="/registrar_usuario" class="nuevo_usuario">Crear Usuario</a>
+
+</article>
+
+<script src="/js/confirmar_borrado.js"></script>

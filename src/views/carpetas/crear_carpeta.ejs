@@ -1,0 +1,85 @@
+<% if(error){ %>
+    <div class="div_error">
+        <span class="error"> <%= error %> </span>
+    </div>
+<% } %>
+
+<form action="/crear_carpeta" method="POST" class="formulario_registro">
+
+    <h3 class="titulo_nueva_carpeta">Nueva carpeta</h3>
+
+    <div class="seccion_formulario">
+        <label>Etiqueta</label>
+        <input type="text" name="Etiqueta" value="<%= datos.Etiqueta %>"> 
+    </div>
+
+    <div class="seccion_formulario">
+        <label>Area</label>
+        <input type="text" name="Area" value="<%= datos.Area %>"> 
+    </div>
+
+    <div class="seccion_formulario">
+        <label>Numero</label>
+        <input type="number" name="Num" value="<%= datos.Num %>"> 
+    </div>
+
+    <div class="seccion_formulario">
+        <label>Sector</label>
+        <input type="text" name="Sector" value="<%= datos.Sector %>"> 
+    </div>
+
+    <div class="seccion_formulario">
+        <label>HBL/HAWB</label>
+        <input type="text" name="HBL_HAWB" value="<%= datos.HBL_HAWB %>"> 
+    </div>
+
+    <div class="seccion_formulario">
+        <label>Cliente</label>
+        
+        <select name="Cliente">
+
+            <% clientes.forEach(function(c){ %>
+                <option value="<%=c.Id%>=<%=c.Nombre%>=<%=c.Mail%>"><%=c.Nombre%></option>
+            <% }) %>
+        </select>
+
+    </div>
+
+    <div class="seccion_formulario">
+        <label>Entidad Exterior</label>
+        <input type="text" name="EntidadExterior" value="<%= datos.EntidadExterior %>"> 
+    </div>
+
+    <div class="seccion_formulario">
+        <label>Transportista</label>
+        <input type="text" name="Transportista" value="<%= datos.Transportista %>"> 
+    </div>
+
+    <div class="seccion_formulario">
+        <label>Origen</label>
+        <input type="text" name="Origen" value="<%= datos.Origen %>"> 
+    </div>
+
+    <div class="seccion_formulario">
+        <label>Destino</label>
+        <input type="text" name="Destino" value="<%= datos.Destino %>"> 
+    </div>
+
+    <div class="seccion_formulario">
+        <label>Fecha Salida</label>
+        <input type="text" name="FechaSalida" value="<%= datos.FechaSalida %>"> 
+    </div>
+    
+    <div class="seccion_formulario">
+        <label>Fecha Llegada</label>
+        <input type="text" name="FechaLlegada" value="<%= datos.FechaLlegada %>"> 
+    </div>
+
+    <div class="botones_registrar">
+        <a href="/ver_carpetas/0" class="boton_registrar">Cancelar</a>
+        <button type="submit" class="boton_registrar">Crear</button>
+    </div>
+    
+
+
+</form>

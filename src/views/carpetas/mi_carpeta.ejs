@@ -1,0 +1,31 @@
+<article class="estados">
+
+    <h3 class="titulo_estados">Carga num: <%=num%></h3>
+
+    <% let i = 0%>
+
+    <% estados.forEach(function(e){ %>
+
+        <section>
+    
+    
+            <% if(i == 0){ %>
+    
+                <h3 class="primer_titulo"><%=e.Titulo%></h3>
+                <p class="primer_descripcion"><%=e.Descripcion%></p>
+    
+            <%} else {  %>
+    
+                <h3 class="titulo"><%=e.Titulo%></h3>
+                <p class="descripcion"><%=e.Descripcion%></p>
+    
+            <% } %>
+    
+            <img src="/img/iconos/flecha1.svg" alt="">
+    
+            <% i = i + 1%>
+    
+        </section>
+    
+    <% }) %>
+</article>

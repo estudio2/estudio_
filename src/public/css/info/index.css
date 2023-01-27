@@ -1,0 +1,733 @@
+
+.contenido_estado_inicial{
+    position: absolute;
+    width: 100%;
+    top: 50px;
+    left: 0;
+    z-index: 30;
+    transition: 1.5s;
+    overflow: hidden;
+}
+
+.contenido_desplazado{
+    width: calc(100% - 300px);
+    top: 50px;
+    left: 300px;
+}
+
+.linea_fondo{
+    width: 200%;
+    height: 2px;
+    background-color: var(--color7);
+    margin-top: 60px;
+
+}
+
+.linea_fondo2{
+    width: 200%;
+    height: 2px;
+    background-color: var(--color7);
+    margin-top: 40px;
+ 
+}
+
+.camion_fondo{
+    position: relative;
+    right: -100px;
+}
+
+@media (max-width: 1000px){
+
+    .menu_estado_inicial{
+        left: -100%;
+        width: 100%;
+    }
+
+    .menu_desplazado{
+        left: 0;
+    }
+
+    .contenido_estado_inicial{
+        width: 100%;
+        top: 50px;
+        left: 0;
+    }
+
+    /*.menu .menu_items .enlace{
+
+        justify-content: center;
+        padding-left: 0;
+
+    }
+
+    .menu .menu_parte_inferior{
+        align-items: center;
+    }
+
+    .menu .menu_parte_inferior .nombre_usuario{
+        margin-left: 0;
+    }*/
+
+}
+
+@media (max-width: 960px){
+  .cabecera .links{
+      display: none;
+  }
+}
+
+@media (max-width: 1000px) and (min-height: 750px){
+    
+    .menu{
+        max-height: 1200px;
+    }
+
+    .menu .menu_items .enlace{
+
+        font-size: 2.4rem;
+
+    }
+
+    .menu .menu_parte_inferior .nombre_usuario{
+        font-size: 1.8rem;
+    }
+
+}
+
+
+
+.contenido_estado_inicial{
+    background-color: var(--color6);
+  }
+  
+  .imagen_containers{
+      position: relative;
+      width: 100%;
+      height: 250px;
+      background-image: url('/img/3.jpg');
+      background-size: cover;
+      background-position: center;
+      border: none;
+      border: 10px solid var(--color1);
+  }
+  
+ 
+    .marco{
+      width: 100%;
+      padding: 10px 30px 0 30px;
+    }
+
+    .introduccion{
+      width: 100% ;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-end;
+      position: relative;
+      z-index: 20;
+      background-color: var(--color1);
+      padding: 10px;
+      margin-top: 30px;
+    }
+  
+    .introduccion .titulo{
+      width: 20vw;
+      height: 10vw;
+      margin-right: 5%;
+
+      
+    }
+  
+    .introduccion .frase{
+      width: 80%;
+      font-size: 2rem;
+      text-align: end;
+      margin: 20px 0;
+      margin-right: 5%;
+    }
+  
+  
+    .introduccion div{
+      position: absolute;
+      bottom: 10px;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+    }
+  
+    .introduccion div .mas{
+      font-size: 2rem;
+      margin-right: 10px;
+    }
+  
+    .introduccion div .flecha{
+      width: 30px;
+      height: 30px;
+      background-color: var(--color2);
+      border-radius: 30px;
+      animation: movimientoFlecha 1s linear infinite;
+    }
+  
+    @keyframes movimientoFlecha {
+  
+      25%{
+          transform: translateY(-5px);
+      }
+  
+      75%{
+         transform: translateY(5px);
+      }
+  
+      100%{
+          transform: translateY(0px);
+       }
+  }
+
+  /*
+  
+    ACA ARRANCAN LAS PRUEBAS
+  
+  */
+
+
+  .servicios{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    position: relative;
+    z-index: 10;
+  }
+
+  .titulo_servicios{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    
+  }
+
+  .titulo_servicios h2{
+    font-size: 35px;
+    text-align: center;
+    margin: 60px 0;
+    display: inline;
+    padding: 3px;
+    color: var(--color1);
+  }
+
+  .servicio_imagen{
+    width: 40vw;
+    min-width: 250px;
+    height: 35vw;
+    min-height: 250px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+    border-radius: 10px;
+    margin: 40px 5px 20px 5px;
+    border: 10px solid var(--color1);
+    text-decoration: none;
+  }
+
+  
+
+  .servicio_imagen .efecto{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 30;
+    border-radius: 10px;
+  }
+
+  .servicio_imagen .efecto:hover{
+    background-color: rgba(202, 202, 202, 0.199);
+  }
+
+  .nacional{
+    background-image: url("/img/camion2.jpg");
+  }
+
+  .internacional{
+    background-image: url("/img/avion.jpg");
+    background-position: 30%;
+  }
+
+  .depositos{
+    background-image: url("/img/deposito.jpeg");
+  }
+  
+  .utilitarios{
+    background-image: url("/img/camioneta.jpeg");
+  }
+
+  .servicio_imagen h3{
+    font-size: 25px;
+    background-color: rgb(43, 109, 196);
+    color: white;
+    padding: 5px;
+    border-radius: 10px;
+    text-align: center;
+  }
+  .utilitarios h3{
+    background-color: rgb(43, 109, 196);
+  }
+
+  .servicio_imagen span{
+    font-size: 20px;
+    margin-top: 20px;
+    position: absolute;
+    bottom: 10px;
+    background-color: rgba(43, 109, 196, 0.514);
+    color: white;
+    padding: 5px;
+    border-radius: 10px;
+    z-index: 50;
+  }
+
+  .servicio_info span{
+    font-size: 20px;
+    margin-top: 20px;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  .otros_servicios_h4{
+    font-size: 3rem;
+    display: inline;
+    padding: 5px;
+    text-align: center;
+    margin: 70px 0 50px 0;
+    color: var(--color1);
+  }
+  
+  .otros_servicios{
+    margin: 30px 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .otros_servicios .otros_servicios_section{
+    width: 350px;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin: 15px;
+  }
+  
+  
+  .otros_servicios .otros_servicios_section .tarjeta{
+    width: 100%;
+    height: 85%;
+    position: relative;
+  }
+  
+  
+  .tarjeta .cara{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    backface-visibility: hidden;
+    transition: 1s;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+
+  
+  .tarjeta .cara_frontal{
+    padding-top: 60px;
+    transform: perspective(600px) rotateY(0deg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 10px solid var(--color1);
+  }
+
+  .cara1{
+    background-image: url("/img/Deposito2.png");
+  }
+
+  .cara2{
+    background-image: url("/img/CamionetaCajas.jpg");
+    background-position: center;
+  }
+  .cara3{
+    background-image: url("/img/camioneta.jpeg");
+  }
+
+  
+  .titulo_otros_servicios{
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--color1);
+  }
+  
+  .otros_servicios_section img{
+    width: 30px;
+    height: 30px;
+  }
+  
+  
+  .tarjeta .cara_trasera{
+    padding: 15px;
+    padding-top: 18%;
+    transform: perspective(600px) rotateY(180deg);
+    border: 2px solid var(--color2);
+  }
+  
+  .cara_frontal_girada{
+    transform: perspective(600px) rotateY(180deg) !important;
+    
+  }
+  
+  .cara_trasera_girada{
+    transform: perspective(600px) rotateY(360deg) !important;
+  }
+  
+  
+  
+  .tarjeta .cara .girar{
+    position: absolute;
+    bottom: 10px;
+    background-color: rgb(43, 109, 196);
+    color: white;
+    font-size: 2rem;
+    padding: 3px;
+    border: none;
+    border-radius: 10px;
+  }
+  
+  .tarjeta .cara .girar:hover{
+    background-color: rgb(37, 37, 37);
+  }
+  
+  .tarjeta .cara_trasera .info{
+    font-size: 15px;
+    text-align: center;
+    color: var(--color1);
+  }
+
+
+
+
+
+
+
+/*
+  Footer
+*/
+
+footer{
+  width: 100%;
+  min-height: 250px;
+  background-color: #a79a96;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+  margin-top: 100px;
+}
+
+footer .seccion_footer{
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+footer .seccion1{
+  width: 70%;
+}
+
+footer .seccion2{
+  width: 30%;
+}
+
+footer .info_footer{
+  width: calc(100% - 500px);
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+footer .redes{
+  margin-right: 20px;
+}
+
+footer .redes img{
+  display: flex;
+  width: 40px;
+  height: 40px;
+  margin: 20px 0;
+}
+
+footer .links_footer{
+  display: flex;
+  flex-direction: column;
+  color: #01253c;
+  font-size: 18px;
+}
+
+footer .links_footer a{
+  margin: 3px;
+  text-decoration: none;
+  color: rgb(29, 28, 28);
+}
+
+footer .links_footer a:hover{
+  color: var(--color3);
+}
+
+footer .contacto{
+  display: flex;
+  flex-direction: column;
+}
+
+footer .contacto span{
+  font-size: 15px;
+  margin: 5px;
+  color: rgb(29, 28, 28);
+}
+
+.links_nombres .logo{
+  color: var(--color8);
+}
+
+footer .logo_footer{
+  width: 250px;
+  height: 130px;
+
+ 
+}
+
+
+
+
+
+
+
+  /*
+  Media queries
+*/
+
+
+@media (max-width: 1000px){
+
+
+    .imagen_containers{
+        height: 200px;
+        background-position-x: right;
+    }
+
+
+
+
+    .introduccion .frase{
+        font-size: 2rem;
+    }
+
+
+  }
+
+  @media (min-width: 1000px) and (min-height: 750px){
+
+    .imagen_containers{
+        height: 200px;
+        background-position-x: right;
+    }
+
+  
+
+
+  }
+  @media (max-width: 820px){
+    
+    footer{
+      flex-direction: column;
+    }
+
+    footer .seccion_footer{
+      width: 100%;
+      justify-content: center;
+    }
+    footer .seccion1{
+      padding-top: 50px;
+    }
+    
+    footer .seccion2{
+      margin-top: 50px;
+      padding-bottom: 100px;
+    }
+
+    footer .links_footer{
+      margin-left: 50px;
+    }    
+
+    footer .contacto{
+      margin-right: 50px;
+    }
+    
+    footer .redes{
+      display: flex;
+      flex-direction: row;
+    }
+
+    footer .redes img{
+      margin: 0 20px;
+    }
+  }
+
+
+  @media (max-width: 780px){
+
+    .introduccion{
+        width: 100%;
+    }
+    
+    .introduccion .frase{
+        width: 90%;
+    }
+
+    .introduccion .titulo{
+        width: 40vw;
+        height: 20vw;
+        margin-top: 0;
+    }
+    
+    .introduccion .frase{
+        font-size: 2rem;
+    }
+
+    .servicio_imagen{
+      width: 90%;
+    }
+
+  }
+
+  @media (max-width: 673px){
+    .servicios .servicios_section{
+      width: 85vw;
+      height: 80vw;
+    }
+
+    .servicios .servicios_section .flecha_carrusel{
+      bottom: calc(34vw - 12.5px);
+    }
+
+    
+  }
+
+  @media (max-width: 520px){
+    .carrusel_item .info{
+      font-size: 1.2rem;
+    }
+
+    .flecha_izquierda{
+      left: -20px;
+    }
+    
+    .flecha_derecha{
+      right: -20px;
+    }
+
+    footer .seccion_footer{
+      flex-direction: column;
+      align-items: center;
+    }
+
+    footer .logo_footer{
+      margin-left: 70px;
+    }
+
+    footer .links_footer{
+      margin-top: 20px;
+    }
+
+    footer .contacto{
+      text-align: center;
+      margin-right: 0;
+      margin-bottom: 40px;
+    }
+    
+    footer .redes{
+      margin-right: 0;
+    }
+  }
+
+
+  @media (max-width: 1000px) and (min-height: 850px){
+    .introduccion{
+        padding-top: 40px;  
+    }
+
+    .introduccion .frase{
+        font-size: 3rem;
+    }
+
+    .introduccion div .mas{
+        font-size: 3rem;
+        margin-right: 15px;
+      }
+    
+      .introduccion div .flecha{
+        width: 50px;
+        height: 50px;
+      }
+}
+
+@media (max-width: 700px) and (min-height: 850px){
+    .introduccion{
+        padding-top: 30px;  
+    }
+
+    .introduccion .frase{
+        font-size: 2.5rem;
+    }
+
+    .introduccion div .mas{
+        font-size: 2.5rem;
+        margin-right: 15px;
+      }
+    
+      .introduccion div .flecha{
+        width: 35px;
+        height: 35px;
+      }
+}
+
+@media (max-width: 300px){
+    html{
+        font-size: 8px;
+    }
+}
+

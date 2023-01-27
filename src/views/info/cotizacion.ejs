@@ -1,0 +1,72 @@
+
+<div class="formulario_cotizacion">
+
+    <h3>Formulario de cotizacion</h3>
+    
+    <form action="/cotizacion" method="POST">
+
+        <% if((usuario != undefined) && (usuario.Version == 2)){%>
+
+            <label>Mail</label>
+            <input type="email" name="Mail" value="<%usuario.Mail%>">
+
+        <% }else{ %>
+
+            <label>Mail</label>
+            <input type="email" name="Mail">
+            
+        <% } %>
+
+        <% if(usuario){ %>
+
+            <label>Nombre</label>
+            <input type="text" name="Nombre" value="<%=usuario.Nombre%>">
+
+        <% }else{ %>
+
+            <label>Nombre</label>
+            <input type="text" name="Nombre">
+                
+         <% } %>
+
+         <label>Razon social</label>
+         <input type="text" name="Razon_Social">
+
+         <label>Mercaderia</label>
+         <input type="text" name="Tipo_m">
+
+         <label>Imo</label>
+         <select name="Imo">
+
+            <option value="Si">Si</option>
+
+            <option value="No">No</option>
+
+         </select>
+
+         <label>Origen</label>
+         <input type="text" name="Origen">
+
+         <label>Destino</label>
+         <input type="text" name="Destino">
+
+         <label>Peso</label>
+         <input type="text" name="Peso">
+         
+         <label>Metros cubicos</label>
+         <input type="text" name="Metros">
+
+         <label>Contenedor</label>
+         <select name="Contenedor">
+
+            <option value="Si">Si</option>
+
+            <option value="No">No</option>
+
+         </select>
+
+        <button type="submit">Enviar</button>
+
+    </form>
+
+</div>

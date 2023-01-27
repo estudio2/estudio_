@@ -1,0 +1,22 @@
+<article>
+
+    <div class="carpetas_tabla">
+
+        <span class="titulo_tabla">Num</span>
+        <span class="titulo_tabla">Etiqueta</span>
+        <span class="titulo_tabla">Salida</span>
+        <span class="titulo_tabla">Llegada</span>
+    
+        <% carpetas.forEach(function(c){ %>
+    
+            <span class="elemento_tabla num"><%= c.Num %></span>
+            <span class="elemento_tabla area"><%= c.Etiqueta%></span>
+            <span class="elemento_tabla cliente"><%= c.FechaSalida %></span>
+            <span class="elemento_tabla area"><%= c.FechaLlegada %></span>
+            <a class="elemento_tabla ver_mas boton_tabla" href="/ver_mi_carpeta/<%=c.Id%>/<%=c.Num%>">Ver</a>
+            
+        <% }) %>
+    
+    </div>
+
+</article>

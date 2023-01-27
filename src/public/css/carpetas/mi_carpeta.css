@@ -1,0 +1,55 @@
+.estados{
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+}
+.estados .titulo_estados{
+    width: 100%;
+    text-align: center;
+    font-size: 1.8rem;
+    margin: 40px 0;
+
+}
+
+
+.estados img{
+    width: 40px;
+    height: 40px;
+    margin: 20px 0;
+    transform: rotate(180deg);
+}
+
+.estados section{
+    width: 100;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.estados section .primer_titulo{
+    font-size: 2.8rem;
+    background-color: var(--color3);
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.estados section .primer_descripcion{
+    font-size: 1.6rem;
+    background-color: var(--color3);
+    margin: 10px 0;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+}
+
+.estados section .titulo{
+    font-size: 1.6rem;
+    text-align: center;
+}
+
+.estados section .descripcion{
+    font-size: 1.4rem;
+    margin: 10px 0;
+    text-align: center;
+}
